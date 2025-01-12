@@ -1,0 +1,15 @@
+Flags
+--------------------------------------------------------------
+Necessarily:
+    way: -o path/to/your/file
+--------------------------------------------------------------
+prefix: -p prefix_
+short info have only num of new elements: -s
+add new info: -a
+full info: -f
+    for number: max, min, middle, sum, num of num
+    for string: num of line, max len, min len
+
+**Default information:
+    write statistic to console
+    default flags: -s
