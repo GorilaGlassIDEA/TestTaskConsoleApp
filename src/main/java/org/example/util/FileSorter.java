@@ -2,13 +2,11 @@ package org.example.util;
 
 import org.example.file.ContentModel;
 import org.example.file.ContentType;
-import org.example.file.FileModel;
+import org.example.file.model.FileModel;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 

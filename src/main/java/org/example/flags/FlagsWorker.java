@@ -3,11 +3,9 @@ package org.example.flags;
 import lombok.Getter;
 import org.example.file.ContentModel;
 import org.example.file.ContentType;
-import org.example.file.FileModel;
+import org.example.file.model.FileModel;
 import org.example.util.CastListContentToStringFormat;
 import org.example.util.FileSorter;
-import org.example.util.GetFileContent;
-import org.example.util.SortNameFile;
 
 import java.io.IOException;
 import java.nio.file.Paths;
