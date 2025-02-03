@@ -4,17 +4,17 @@ import org.example.file.impl.content.SorterContentUtil;
 import org.example.file.model.abstracts.file.ObjFile;
 import org.example.file.model.abstracts.file.OpenFile;
 
-public class IntFile extends ObjFile {
+public class StringFile extends ObjFile {
     private final String content;
 
-    public IntFile(String directoryForSaving, OpenFile openFile) {
-        super(directoryForSaving, openFile, "integer.txt");
-        content = SorterContentUtil.getInt(openFile.getPathFrom());
-
+    public StringFile(String directoryForSaving, OpenFile openFile) {
+        super(directoryForSaving, openFile, "string.txt");
+        content = SorterContentUtil.getString(openFile.getPathFrom());
     }
 
     @Override
     public String getContent() {
         return content.trim();
     }
+
 }

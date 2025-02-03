@@ -13,4 +13,6 @@ public abstract class OpenFile implements File {
 
     @Override
     public abstract String getContent();
+
+
 }

@@ -16,17 +16,17 @@ public class SorterContentUtil {
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line;
             while ((line = br.readLine()) != null) {
-                line = line.replaceAll(" ", "");
+                line = line.trim();
                 if (line.isEmpty()) {
                     continue;
                 }
                 try {
-                    integers.append(Integer.parseInt(line));
+                    integers.append(Integer.parseInt(line)).append("\n");
                 } catch (NumberFormatException e1) {
                     try {
-                        doubles.append(Double.parseDouble(line));
+                        doubles.append(Double.parseDouble(line)).append("\n");
                     } catch (NumberFormatException e2) {
-                        strings.append(line);
+                        strings.append(line).append("\n");
                     }
                 }
             }
@@ -50,9 +50,11 @@ public class SorterContentUtil {
     public static String getInt(String path) {
         return sort(path, 0);
     }
+
     public static String getDouble(String path) {
         return sort(path, 1);
     }
+
     public static String getString(String path) {
         return sort(path, 2);
     }

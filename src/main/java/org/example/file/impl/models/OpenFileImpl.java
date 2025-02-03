@@ -22,4 +22,11 @@ public class OpenFileImpl extends OpenFile {
         }
     }
 
+    @Override
+    public String toString() {
+        return "OpenFileImpl{" +
+                "content='" + content + '\'' +
+                ", pathFrom='" + pathFrom + '\'' +
+                '}';
+    }
 }
