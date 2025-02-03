@@ -19,19 +19,19 @@ public abstract class ObjFile implements File {
         } else {
             this.directoryForSaving = directoryForSaving;
         }
-        pathFileForSaving = directoryForSaving + "/" + typeFileAndTxtFormat;
+        pathFileForSaving = directoryForSaving + typeFileAndTxtFormat;
         fullName = typeFileAndTxtFormat;
     }
 
     public void setDirectoryForSaving(String directoryForSaving) {
         this.directoryForSaving = directoryForSaving;
-        pathFileForSaving = directoryForSaving + '/' + fullName;
+        pathFileForSaving = directoryForSaving + "/" + getName();
     }
 
     public void setName(String prefix) {
         this.prefix = prefix;
         fullName = (prefix == null ? "" : prefix) + "_" + typeFileAndTxtFormat;
-        pathFileForSaving = directoryForSaving + '/' + fullName;
+        pathFileForSaving = directoryForSaving + "/" + getName();
     }
 
     public String getName() {
