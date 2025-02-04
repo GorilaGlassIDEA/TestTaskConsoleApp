@@ -8,7 +8,7 @@ public class StringFile extends ObjFile {
     private final String content;
 
     public StringFile(String directoryForSaving, OpenFile openFile) {
-        super(directoryForSaving, openFile, "string.txt");
+        super(directoryForSaving, "string.txt");
         content = SorterContentUtil.getString(openFile.getPathFrom());
     }
 

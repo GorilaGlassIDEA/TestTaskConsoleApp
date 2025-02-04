@@ -8,7 +8,7 @@ public class IntFile extends ObjFile {
     private final String content;
 
     public IntFile(String directoryForSaving, OpenFile openFile) {
-        super(directoryForSaving, openFile, "integer.txt");
+        super(directoryForSaving, "integer.txt");
         content = SorterContentUtil.getInt(openFile.getPathFrom());
 
     }

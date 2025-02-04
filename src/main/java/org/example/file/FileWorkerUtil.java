@@ -12,7 +12,7 @@ import java.util.List;
 
 // Сохраняет все файлы в один массив,
 // после чего проходит по каждому файлу и сохраняет его по пути
-public class FileWorkerUtil {
+public class FileWorkerUtil implements FileWorker {
     private final List<ObjFile> thisFiles = new ArrayList<>();
 
     public void addFile(ObjFile... files) {
@@ -31,7 +31,6 @@ public class FileWorkerUtil {
                 } catch (IOException e) {
                     throw new RuntimeException("Не удалось создать файл", e);
                 }
-
             }
         }
     }

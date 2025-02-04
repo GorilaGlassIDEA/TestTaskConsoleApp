@@ -8,7 +8,7 @@ public class DoubleFile extends ObjFile {
     private final String content;
 
     public DoubleFile(String directoryForSaving, OpenFile openFile) {
-        super(directoryForSaving, openFile, "double.txt");
+        super(directoryForSaving, "double.txt");
         content = SorterContentUtil.getDouble(openFile.getPathFrom());
     }
 

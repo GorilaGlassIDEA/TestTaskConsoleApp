@@ -12,7 +12,7 @@ public abstract class ObjFile implements File {
     private String prefix;
     private String fullName;
 
-    public ObjFile(String directoryForSaving, OpenFile openFile, String typeFileAndTxtFormat) {
+    public ObjFile(String directoryForSaving, String typeFileAndTxtFormat) {
         this.typeFileAndTxtFormat = typeFileAndTxtFormat;
         if (directoryForSaving.isEmpty()) {
             this.directoryForSaving = System.getProperty("user.dir");
@@ -30,7 +30,9 @@ public abstract class ObjFile implements File {
 
     public void setName(String prefix) {
         this.prefix = prefix;
-        fullName = (prefix == null ? "" : prefix) + "_" + typeFileAndTxtFormat;
+        if (!prefix.isEmpty()){
+            fullName = prefix + "_" + typeFileAndTxtFormat;
+        }else fullName = typeFileAndTxtFormat;
         pathFileForSaving = directoryForSaving + "/" + getName();
     }
 
