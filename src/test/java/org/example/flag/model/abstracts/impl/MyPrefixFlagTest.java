@@ -21,10 +21,11 @@ class MyPrefixFlagTest {
         assertEquals(prefix, myPrefixFlag1.getPrefixName());
 
         String[] args2 = {"-p"};
-        MyPrefixFlag myPrefixFlag = new MyPrefixFlag(
-                args2,
-                intFile);
-        assertThrows(RuntimeException.class, myPrefixFlag::findPrefix);
+        assertThrows(RuntimeException.class, () -> {
+            new MyPrefixFlag(
+                    args2,
+                    intFile);
+        });
     }
 
 }
