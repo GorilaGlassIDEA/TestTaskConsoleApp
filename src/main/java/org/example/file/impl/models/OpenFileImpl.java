@@ -7,18 +7,22 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+@Getter
 public class OpenFileImpl extends OpenFile {
-    @Getter
-    private final String content;
-    private final String pathFrom;
+    private String content;
 
     public OpenFileImpl(String pathFrom) {
         super(pathFrom);
-        this.pathFrom = pathFrom;
         try {
-            content = Files.readString(Path.of(pathFrom));
+            content = Files.readString(Path.of(getPathFrom()));
         } catch (IOException e) {
-            throw new RuntimeException("Не удалось открыть файл!");
+            try {
+                setPathFrom(System.getProperty("user.dir") + "/" + getPathFrom());
+                content = Files.readString(Path.of(getPathFrom()));
+            } catch (IOException e2) {
+                System.out.println(this);
+                throw new RuntimeException("Не удалось открыть файл!");
+            }
         }
     }
 
@@ -26,7 +30,7 @@ public class OpenFileImpl extends OpenFile {
     public String toString() {
         return "OpenFileImpl{" +
                 "content='" + content + '\'' +
-                ", pathFrom='" + pathFrom + '\'' +
+                ", pathFrom='" + getPathFrom() + '\'' +
                 '}';
     }
 }

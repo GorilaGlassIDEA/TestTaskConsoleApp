@@ -1,18 +1,15 @@
 package org.example.file.model.abstracts.file;
 
+import lombok.Data;
 import lombok.Getter;
 
 // Общее описание всех открытых файлов
-@Getter
+@Data
 public abstract class OpenFile implements File {
-    private final String pathFrom;
+    private String pathFrom;
 
     public OpenFile(String pathFrom) {
-        if (pathFrom == null) {
-            this.pathFrom = System.getProperty("user.dir");
-        } else {
-            this.pathFrom = pathFrom;
-        }
+        this.pathFrom = pathFrom;
     }
 
     @Override

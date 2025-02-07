@@ -12,20 +12,25 @@ public class PathFlagImpl extends PathFlag {
     private String path = System.getProperty("user.dir");
 
     public PathFlagImpl(String[] args) {
-        if (args == null) {
-            throw new RuntimeException("Аргументы пустые, проверьте корректность ввода данных");
-        }
         this.args = args;
     }
 
     @Override
     public String getArgs() {
+        foundArgs();
         return path;
     }
 
     private void foundArgs() {
-
-
+        for (int i = 0; i < args.length; i++) {
+            if (args[i].equals(getFlag())) {
+                try {
+                    path = args[i + 1];
+                    return;
+                } catch (IndexOutOfBoundsException e) {
+                    throw new RuntimeException("Не введен аргумент пути для фалага " + getFlag());
+                }
+            }
+        }
     }
-
 }

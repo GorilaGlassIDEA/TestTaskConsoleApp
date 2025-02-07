@@ -20,7 +20,7 @@ public class MyPrefixFlag extends PrefixFlag {
         }
     }
 
-    protected void findPrefix() {
+    private void findPrefix() {
         if (args != null) {
             for (int i = 0; i < args.length; i++) {
                 if (args[i].equals(getFlag())) {

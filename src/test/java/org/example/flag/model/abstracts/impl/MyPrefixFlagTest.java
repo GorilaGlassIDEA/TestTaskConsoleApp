@@ -17,7 +17,7 @@ class MyPrefixFlagTest {
         MyPrefixFlag myPrefixFlag1 = new MyPrefixFlag(
                 args1,
                 intFile);
-        myPrefixFlag1.findPrefix();
+        myPrefixFlag1.getArgs();
         assertEquals(prefix, myPrefixFlag1.getArgs());
 
         String[] args2 = {"-p"};
