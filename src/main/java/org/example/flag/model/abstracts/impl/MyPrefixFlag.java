@@ -4,10 +4,8 @@ import lombok.Getter;
 import org.example.file.model.abstracts.file.ObjFile;
 import org.example.flag.model.abstracts.model.PrefixFlag;
 
-import java.util.ArrayList;
 import java.util.List;
 
-@Getter
 public class MyPrefixFlag extends PrefixFlag {
     private String prefixName = "";
     private final String[] args;
@@ -34,5 +32,10 @@ public class MyPrefixFlag extends PrefixFlag {
                 }
             }
         }
+    }
+
+    @Override
+    public String getArgs() {
+        return prefixName;
     }
 }

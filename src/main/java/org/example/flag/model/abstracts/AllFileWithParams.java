@@ -41,9 +41,9 @@ public class AllFileWithParams {
                 new StringFile("", openFile)
         };
         PrefixFlag prefixFlag = new MyPrefixFlag(args, objFiles);
-        System.out.println(prefixFlag.getPrefixName());
+        System.out.println(prefixFlag.getArgs());
         for (ObjFile objFile : objFiles) {
-            objFile.setName(prefixFlag.getPrefixName());
+            objFile.setName(prefixFlag.getArgs());
         }
         fileWorkerUtil.addFile(objFiles);
         fileWorkerUtil.createFile(true);
